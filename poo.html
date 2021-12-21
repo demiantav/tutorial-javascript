@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Programacion orientada a objetos</title>
+</head>
+<body>
+
+  <h1>hola</h1>
+
+  <script>
+
+    // Prototipos:
+
+    function Vehiculo (marca,año){
+
+      this.marca= marca;
+      this.año= año;
+
+
+    }
+
+    Vehiculo.prototype.encender = function(){  //Metodo asignado a la funcion constructora Coche
+
+      console.log("El vehiculo se encendio");
+    }
+
+    let coche1 = new Vehiculo ("Ferrari",2020); // Creacion del objeto
+
+  coche1.encender();
+  console.log(coche1);
+
+  //////////////////////////////////////////////////////
+
+  // Herencia prototipica:
+
+  function Coche (marca,año,puertas){
+    this.super= Vehiculo;
+    this.super(marca,año); // Aca llamamos al constructor del prototipo "Vehiculo"
+    this.puertas= puertas;
+  }
+
+  Coche.prototype= new Vehiculo(); //Linea muy importante para realizar la herencia
+
+  let coche2 = new Coche("Porsche", 1994, 4);
+  let coche3 = new Vehiculo ("papa", 2010);
+
+  Coche.prototype.encender = function() { // De esta manera podemos hacer sobreescritura de metodos
+
+    console.log("El coche se encendio");
+
+  }
+
+  Coche.prototype.apagar = function(){
+
+    console.log("El coche se apago");
+  }
+
+  console.log(coche2);
+  coche2.encender();
+  coche3.encender();
+  coche2.apagar();
+
+  ///////////////////////////////////////////////////////////////////
+
+  // Clases y herencia:
+
+
+//Clase padre
+
+  class Animal {
+
+    constructor (nombre, especie){
+
+      this.nombre = nombre;
+      this.especie = especie;
+    }
+
+    // Metodos
+
+    correr(){
+      console.log("El animal salio corriendo");
+    }
+
+     get getNombre(){
+       return this.nombre;
+    }
+
+    set setNombre(nombre){
+      this.nombre= nombre;
+    }
+  }
+
+// Clase hijo
+
+class Mono extends Animal {
+
+  constructor(nombre,especie,tamaño){
+
+    super(nombre,especie);
+    this.tamaño= tamaño;
+
+  }
+
+  correr(){
+
+    console.log(`Soy un mono y me llamo ${this.nombre}, ahora voy a correr.`);
+  }
+
+  static queEs(){ //Metodo estatico que unicamente puede ser invocado por la clase misma "Mono"
+    console.log("Somos monos y saltamos mucho.");
+  }
+}
+
+
+
+
+
+
+  let mono = new Mono("Pepito","Mono",1.24);
+
+  console.log(mono);
+  mono.correr();
+  console.log(mono.tamaño);
+  Mono.queEs();
+  console.log(mono.getNombre);
+  mono.setNombre = "Jorge";
+  console.log(mono.getNombre);
+
+
+
+
+
+
+  </script>
+
+</body>
+</html>

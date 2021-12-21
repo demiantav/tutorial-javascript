@@ -25,12 +25,141 @@
 
     }
 
+    function mostrar(){
+      console.log("Esto es una funcion");
+    }
+
     console.log(hola);
     console.log(hola.length);
     console.log(hola.includes("e"));
     console.log(window);
     console.log(persona.nombre);
     console.log(`hola mi nombre es ${persona.nombre}`);
+    console.log("caca");
+
+
+    mostrar();
+    const arreglo = [1,"quehace",[1,3,4,"estoyaca"]];
+    arreglo.push(1250);
+
+
+    arreglo.forEach(function(i) {
+
+      console.log(i);
+
+    })
+
+    const objeto = {
+
+      nombre: "Demi",
+      edad: 29
+    }
+
+    const objeto2 = {
+
+      nombre: "Raul",
+      edad: 48
+    }
+
+    console.log(Object.values(objeto2));
+    console.log(7 >= "7");
+
+   function testLessThan(val) {
+
+      if (val < 25) {
+          return "Under 25";
+      } else return false
+
+  }
+
+  console.log(testLessThan(56));
+  console.log((testLessThan(80)) ? true : false);
+
+
+// Ejemplo ciclo forIn
+
+  for (var variable in objeto) {
+
+    console.log(objeto[variable]);
+  }
+
+  // Destructuring
+
+  let arrdest = [1,"palabra", objeto2];
+
+  let [num,palabra,obje] = arrdest; // Aca se realiza
+
+  console.log(obje);
+
+  // Objetos literales
+
+  let nombre = "Popi",
+      edad = 14;
+
+  let perro = { // El objeto automaticamente reconoce los nombres de las variables y los asigna
+    nombre,
+    edad,
+    ladrar(){ // Puedo crearle un metodo asi
+      console.log("Estoy ladrando");
+    }
+  }
+
+  console.log(perro);
+
+   /* Parametro REST
+
+   De esta manera podemos agregar parametros de manera infinita, por ej
+   tener una funcion que reciba dos parametros y si lo desea pueda seguir
+   agregando los que quiera:
+
+   */
+
+   function sumar(num1, num2, ...c){
+
+     let resultado = num1 + num2;
+
+     c.forEach((i) => { // Si llega a entrar un numero adicional lo recorre y agrega a resultado
+
+       resultado += i;
+     });
+
+     return resultado;
+   }
+
+   console.log(sumar(5,5,10));
+
+   // Spread Operator:
+
+   let arr = [5,8,7,2],
+       arr2 = [21,45,6];
+
+  let arr3 = [...arr,...arr2];
+
+  console.log(arr3);
+
+  ////////////////////////////
+
+  // Arrow Functions:
+
+  let sumar2 = (a,b) => a+b;
+
+  console.log(sumar2(10,5));
+
+  arr3.forEach((i) => console.log(i)); // Podemos recorrer un arreglo de esta manera
+
+  //////////////////////////
+
+  // Prototipos:
+
+
+
+
+
+
+
+
+
+
 
   </script>
 
