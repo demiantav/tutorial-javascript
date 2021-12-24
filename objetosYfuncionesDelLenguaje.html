@@ -17,6 +17,13 @@
     console.log(console);
     console.error("Te mandaste una cagada");
     console.warn("No seas gil.");
+
+    console.dir(document); //Document representa el documento Html y de esta manera podemos ver todo lo que tiene Document
+
+    // Objeto Date:
+
+    console.log(Date.now()); //Tiempo historico en segundos desde las 00:00:00 del 1 de enero de 1970
+
     console.dir(document);
 
     alert("Sali de aca"); // De esta manera podemos dar un mensaje mediante una ventana
@@ -26,6 +33,24 @@
     console.log(aviso);
 
     // Expresiones regulares
+
+    let texto = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, se eiusmod tempor incididunt ut labore et dolore magna enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor reprehenderit  voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat cupidatat non proident, sunt  culpa qui officia deserunt mollit anim id est laborum.";
+
+    let palabraPrueba = "asgyth";
+
+    console.log(texto);
+
+    let reg1 = /sunt/; // Busca la palabra exacta
+    let reg2 = /gr*t/; // Busca que la cadena contenga el orden exacto de caracteres, primero la g, luego la r (con el * le indicamos que puede aparecer 0 o mas veces) y por ultimo la t
+    let reg3= /Asgyth/ig;
+
+    console.log(reg1.test(texto));
+    console.log(reg1.exec(texto));
+    console.log(reg2.test(palabraPrueba));
+    console.log(reg3.test(palabraPrueba));
+
+
+
 
 
   </script>
