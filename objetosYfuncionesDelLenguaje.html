@@ -22,6 +22,7 @@
 
     // Objeto Date:
 
+
     console.log(Date.now()); //Tiempo historico en segundos desde las 00:00:00 del 1 de enero de 1970
 
     console.dir(document);
@@ -41,7 +42,7 @@
     console.log(texto);
 
     let reg1 = /sunt/; // Busca la palabra exacta
-    let reg2 = /gr*t/; // Busca que la cadena contenga el orden exacto de caracteres, primero la g, luego la r (con el * le indicamos que puede aparecer 0 o mas veces) y por ultimo la t
+    let reg2 = /gr*t/; // Busca que la cadena contenga el orden exacto de caracteres, primero la g, luego la r (con el * le indicamos que puede aparecer 0 o mas veces) y por ultimo la t.
     let reg3= /Asgyth/ig;
 
     console.log(reg1.test(texto));
@@ -49,11 +50,41 @@
     console.log(reg2.test(palabraPrueba));
     console.log(reg3.test(palabraPrueba));
 
+    // Funciones Anonimas Autoejecutables:
+
+    //Son dos parentesis, el primero tiene la funcion y el segundo tiene los parametros
+
+(function (d,w,c){
+  console.log("Funcion autoejecutable");
+  console.log(d);
+  console.log(w);
+  console.log(c);
+})(document,window,console); //d hace referencia a document, w a window y asi sucesivamente
+
+let res = (function (n1,n2){
+
+    return n1+n2;
+
+})(250,250);
+
+console.log(res);
+
+console.clear() // Limpio pantalla de la consola
+
+
+
+
+
+
+
 
 
 
 
   </script>
+
+  <script src="js/modulo.js" type = "module"></script>
+  <script src="js/modulo2.js" type= "module"></script>
 
 
 
