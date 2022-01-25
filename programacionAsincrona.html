@@ -11,9 +11,77 @@
 
   <script>
 
-    let timeId= setInterval(() => alert("Cuidado"), 2000);
+    let timeId= setInterval(() => alert("Cuidado"), 2000); // Guardamos una funcion que va a arrojar un alerta en forma de ventana cada 2 seg
 
-    setTimeout(timeId,3000)
+    clearInterval(timeId); //Con esta funcion cancelamos el metodo anterior
+
+
+
+//Ejemplo de codigo sincrono bloqueable:
+
+// Las funciones se van apilando en una cola y se van ejecutando de una a la vez, siempre empezando por la ultima que se apilo (LIFO)
+
+    const ejecutarSincrono = () =>{
+
+      console.log("Inicio");
+
+      function uno(){
+
+        console.log("Uno");
+        dos();
+        console.log("Tres")
+      }
+
+      function dos(){
+
+        console.log("Dos");
+      }
+
+      uno();
+      console.log("Fin");
+
+
+    }
+
+    ejecutarSincrono();
+
+
+
+    //Ejemplo de codigo asincrono no bloqueable:
+
+    //El single thread no se bloqueara en ningun momento ya que las funciones asincronas permiten que el codigo continue ejecutandose
+
+    const ejecutarSincrono2 = () => {
+
+      console.log("Inicio dos");
+
+      function unoAsin(){
+
+        setTimeout( () => {
+
+          console.log("1");
+
+        }, 200);
+
+        dosAsin();
+        console.log("3");
+
+      }
+
+      function dosAsin(){
+
+        setTimeout( () =>{
+
+          console.log("2");
+        }, 2000)
+      }
+
+      unoAsin();
+      console.log("Terminar");
+    }
+
+    ejecutarSincrono2();
+
   </script>
 
 </body>
