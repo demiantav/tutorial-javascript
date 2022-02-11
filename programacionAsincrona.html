@@ -11,7 +11,7 @@
 
   <script>
 
-    let timeId= setInterval(() => alert("Cuidado"), 2000); // Guardamos una funcion que va a arrojar un alerta en forma de ventana cada 2 seg
+  /*  let timeId= setInterval(() => alert("Cuidado"), 2000); // Guardamos una funcion que va a arrojar un alerta en forma de ventana cada 2 seg
 
     clearInterval(timeId); //Con esta funcion cancelamos el metodo anterior
 
@@ -78,9 +78,93 @@
 
       unoAsin();
       console.log("Terminar");
+
     }
 
     ejecutarSincrono2();
+    console.log(navigator);
+
+*/
+    // Callbacks
+
+  /*  const funcion = (callback) => {
+
+         setTimeout(()=>{
+
+           console.log("Hola");
+           callback();
+         }, 5000);
+
+         console.log("Aca estoy")
+
+    }
+
+    const sumar = () => {
+
+      console.log(5+3);
+    }
+
+
+    funcion(sumar);
+
+
+    // Promises
+
+*/
+// Guardamos el objeto promesa en una variable, la promesa recibe una arrow function con dos parametros, los cuales son los estados de la promesa
+
+    const promesa = new Promise((resolve,reject)=>{
+
+      let flag = true;
+
+      if(!flag) return Promise.reject(new Error('fail')); // Si es falso el estado pasa a reject y tira error
+
+      setTimeout( () =>{
+
+        resolve({
+        nombre: "demian"
+      });
+
+      }, Math.random() * 5000);
+
+
+    });
+
+  /*  promesa
+    .then((message)=>{
+      console.log("Estas adentro de la promesa");
+      console.log(message);
+
+
+    })
+    .catch(error => console.log(error));
+
+*/
+    // Async - Await
+
+    const funcionAsyn = async () => {
+
+      try {
+
+        console.log("Dentro de la asincronia");
+        const obj = await promesa; // Con await logramos que el codigo espere a que se cumpla la promesa para ejecutar lo siguiente
+        console.log(obj);
+
+      } catch (error) {
+
+        console.log(error);
+
+      }
+    }
+
+    funcionAsyn();
+
+
+
+
+
+
+
 
   </script>
 
