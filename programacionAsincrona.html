@@ -11,7 +11,7 @@
 
   <script>
 
-  /*  let timeId= setInterval(() => alert("Cuidado"), 2000); // Guardamos una funcion que va a arrojar un alerta en forma de ventana cada 2 seg
+   let timeId= setInterval(() => alert("Cuidado"), 2000); // Guardamos una funcion que va a arrojar un alerta en forma de ventana cada 2 seg
 
     clearInterval(timeId); //Con esta funcion cancelamos el metodo anterior
 
@@ -84,10 +84,10 @@
     ejecutarSincrono2();
     console.log(navigator);
 
-*/
+
     // Callbacks
 
-  /*  const funcion = (callback) => {
+   const funcion = (callback) => {
 
          setTimeout(()=>{
 
@@ -110,12 +110,12 @@
 
     // Promises
 
-*/
+
 // Guardamos el objeto promesa en una variable, la promesa recibe una arrow function con dos parametros, los cuales son los estados de la promesa
 
     const promesa = new Promise((resolve,reject)=>{
 
-      let flag = true;
+      let flag = false;
 
       if(!flag) return Promise.reject(new Error('fail')); // Si es falso el estado pasa a reject y tira error
 
