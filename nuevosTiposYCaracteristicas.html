@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nuevos tipos y caracteristicas</title>
+</head>
+<body>
+
+  <script>
+
+    // Symbols (Nuevo tipo de dato primitivo)
+
+    // Cada simbolo es unico, por eso ahora la comparacion nos da false:
+
+    let id = Symbol("id");
+    let id2= Symbol("id2");
+
+    console.log(id===id2);
+
+    const DNI = Symbol();
+
+    const persona = {
+
+      [DNI]: 35676054,
+      nombre: "demian"
+
+
+    }
+
+    console.log(persona);
+    console.log(DNI); //No nos permite saber cual es el nombre de la variable
+    console.log(persona[DNI]); // De esta manera accedemos al nombre de lo que contiene la variable
+
+
+
+
+
+
+  </script>
+
+</body>
+</html>
