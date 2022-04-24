@@ -10,7 +10,7 @@
 
   <script>
 
-    // Symbols (Nuevo tipo de dato primitivo)
+    /*// Symbols (Nuevo tipo de dato primitivo)
 
     // Cada simbolo es unico, por eso ahora la comparacion nos da false:
 
@@ -32,6 +32,120 @@
     console.log(persona);
     console.log(DNI); //No nos permite saber cual es el nombre de la variable
     console.log(persona[DNI]); // De esta manera accedemos al nombre de lo que contiene la variable
+
+    // Sets
+
+    const set = new Set();
+
+    set.add("HUMANO");
+    set.add([2,5,7,7,9,23,"robocop","robocop",{},{nombre:"pipo"}]);
+    set.add("HUMANO"); //Este elemento no se guarda porque ya existe uno igual
+
+    console.log(set);
+
+    // Maps
+
+    const mapa = new Map();
+
+    mapa.set("codigo",453456);
+    mapa.set("nombre", "Demián");
+
+    console.log(mapa);
+
+    // WeakMaps y WeakSets
+
+    const ws = new WeakSet();
+
+    ws.add({
+
+      nombre:"demi"
+    });
+
+    const wm = new WeakMap();
+
+    let ob = {"ID": 321993};
+
+
+    wm.set(ob,"caca");
+
+    console.log(wm);
+    console.log(ws)
+
+
+    //Iterables & Iterators
+
+    const array = [12,4,"Salud",{nombre: "pepito"}];
+
+    const iterable = array[Symbol.iterator](); // Creamos la interfaz iterador para recorrer elementos Iterables
+
+    console.log(array);
+    console.log(iterable);
+    console.log(iterable.next());
+    console.log(iterable.next());
+    console.log(iterable.next());
+    console.log(iterable.next());
+    console.log(iterable.next());
+*/
+    //Generators
+
+    function* iteradorG(){
+
+      yield "1";
+      console.log("Primera frenada");
+      yield "2";
+      console.log("Segunda frenada");
+
+    }
+
+    const iterador = iteradorG();
+
+
+
+    for(let elem of iterador){
+      console.log(elem);
+    }
+
+    const nuevoarr = [...iteradorG()]; // Guardamos los yield del generator dentro de un arreglo
+
+    console.log(nuevoarr);
+    console.log(iterador);
+
+    // Proxies
+
+    const persona = {
+      nombre: "",
+      nacionalidad: "",
+      edad: 0
+
+    }
+
+    const handler = {
+
+      set(obj, prop, value){
+        obj[prop]= value;
+      }
+    }
+
+    const dem = new Proxy(persona,handler); //Se genera una copia del objeto target y la usamos de controlador
+
+    console.log(dem);
+
+    dem.nombre= "pelotita";
+
+    console.log(dem);
+    console.log(persona);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

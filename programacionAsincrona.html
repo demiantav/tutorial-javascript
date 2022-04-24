@@ -13,13 +13,13 @@
 
    let timeId= setInterval(() => alert("Cuidado"), 2000); // Guardamos una funcion que va a arrojar un alerta en forma de ventana cada 2 seg
 
-    clearInterval(timeId); //Con esta funcion cancelamos el metodo anterior
+  clearInterval(timeId); //Con esta funcion cancelamos el metodo anterior
 
 
 
 //Ejemplo de codigo sincrono bloqueable:
 
-// Las funciones se van apilando en una cola y se van ejecutando de una a la vez, siempre empezando por la ultima que se apilo (LIFO)
+// Las funciones se van apilando en una pila (Stack) y se van ejecutando de una a la vez, siempre empezando por la ultima que se apilo (LIFO)
 
     const ejecutarSincrono = () =>{
 
@@ -115,7 +115,7 @@
 
     const promesa = new Promise((resolve,reject)=>{
 
-      let flag = false;
+      let flag = true;
 
       if(!flag) return Promise.reject(new Error('fail')); // Si es falso el estado pasa a reject y tira error
 
@@ -130,7 +130,7 @@
 
     });
 
-  /*  promesa
+   promesa
     .then((message)=>{
       console.log("Estas adentro de la promesa");
       console.log(message);
@@ -139,7 +139,7 @@
     })
     .catch(error => console.log(error));
 
-*/
+
     // Async - Await
 
     const funcionAsyn = async () => {
@@ -158,6 +158,7 @@
     }
 
     funcionAsyn();
+
 
 
 
