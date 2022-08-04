@@ -16,7 +16,7 @@
 
   <script>
 
-    let hola = 'Hello';
+   let hola = 'Hello';
 
     let persona = {
 
@@ -27,7 +27,11 @@
 
     function mostrar(){
       console.log("Esto es una funcion");
+      console.log(hola);
+
     }
+
+    mostrar();
 
     console.log(hola);
     console.log(hola.length);
@@ -38,7 +42,7 @@
     console.log("caca");
 
 
-    mostrar();
+
     const arreglo = [1,"quehace",[1,3,4,"estoyaca"]];
     arreglo.push(1250);
 
@@ -93,12 +97,12 @@
 
   // Objetos literales
 
-  let nombre = "Popi",
-      edad = 14;
+  let apodo = "Popi",
+      años = 14;
 
   let perro = { // El objeto automaticamente reconoce los nombres de las variables y los asigna
-    nombre,
-    edad,
+    apodo,
+    años,
     ladrar(){ // Puedo crearle un metodo asi
       console.log("Estoy ladrando");
     }
@@ -126,7 +130,7 @@
      return resultado;
    }
 
-   console.log(sumar(5,5,10));
+   console.log(sumar(5,5,10,10,10,10,10));
 
    // Spread Operator:
 

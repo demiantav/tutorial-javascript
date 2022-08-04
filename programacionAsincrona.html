@@ -11,7 +11,7 @@
 
   <script>
 
-   let timeId= setInterval(() => alert("Cuidado"), 2000); // Guardamos una funcion que va a arrojar un alerta en forma de ventana cada 2 seg
+   let timeId= setInterval(() => alert("Cuidado"), 10000); // Guardamos una funcion que va a arrojar un alerta en forma de ventana cada 2 seg
 
   clearInterval(timeId); //Con esta funcion cancelamos el metodo anterior
 
@@ -130,15 +130,15 @@
 
     });
 
-   promesa
-    .then((message)=>{
+  /* promesa
+    .then((result)=>{
       console.log("Estas adentro de la promesa");
-      console.log(message);
+      console.log(result);
 
 
     })
     .catch(error => console.log(error));
-
+*/
 
     // Async - Await
 
