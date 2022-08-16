@@ -91,7 +91,11 @@
 */
     //Generators
 
+<<<<<<< HEAD
 /*  function* iteradorG(){
+=======
+  /*  function* iteradorG(){
+>>>>>>> main
 
       yield "1";
       console.log("Primera frenada");
@@ -137,6 +141,40 @@
 
     console.log(dem);
     console.log(persona);
+    */
+
+    // Propiedades dinamicas de los objetos
+    
+    let contenedorObjetos = {};
+
+    const api = ["manolo", "ernesto", "faustino"];
+    
+    console.log(contenedorObjetos);
+
+    api.forEach((persona, index) => contenedorObjetos[`Id:${index}`]= persona);
+
+    console.log(contenedorObjetos);
+
+    //Call
+
+    this.dondeEstoy= "Contexto global";
+
+    function decime() {
+
+      console.log(this.dondeEstoy);
+    }
+
+    decime();
+
+    let obj = {
+
+      dondeEstoy: "Contexto objeto"
+    }
+
+    decime.call(obj); // De esta manera el metodo decime se va a ejecutar pero haciendo referencia al this.dondeEstoy del contexto del obj en lugar del contexto global
+
+
+    
 
 */
 
