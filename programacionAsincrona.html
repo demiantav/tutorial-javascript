@@ -11,7 +11,7 @@
 
   <script>
 
-   let timeId= setInterval(() => alert("Cuidado"), 10000); // Guardamos una funcion que va a arrojar un alerta en forma de ventana cada 2 seg
+  /* let timeId= setInterval(() => alert("Cuidado"), 10000); // Guardamos una funcion que va a arrojar un alerta en forma de ventana cada 2 seg
 
   clearInterval(timeId); //Con esta funcion cancelamos el metodo anterior
 
@@ -113,11 +113,11 @@
 
 // Guardamos el objeto promesa en una variable, la promesa recibe una arrow function con dos parametros, los cuales son los estados de la promesa
 
-    const promesa = new Promise((resolve,reject)=>{
+  */  const promesa = new Promise((resolve,reject)=>{
 
       let flag = true;
 
-      if(!flag) return Promise.reject(new Error('fail')); // Si es falso el estado pasa a reject y tira error
+      if(!flag) return Promise.reject(new Error(" Esto esta todo mal ")); // Si es falso el estado pasa a reject y tira error
 
       setTimeout( () =>{
 
@@ -137,8 +137,8 @@
 
 
     })
-    .catch(error => console.log(error));
-*/
+    .catch(error => console.log(error));*/
+
 
     // Async - Await
 
@@ -149,15 +149,20 @@
         console.log("Dentro de la asincronia");
         const obj = await promesa; // Con await logramos que el codigo espere a que se cumpla la promesa para ejecutar lo siguiente
         console.log(obj);
+        console.log(promesa);
 
-      } catch (error) {
+      } catch (err) {
 
-        console.log(error);
+        console.log(err.message);
 
       }
     }
 
+    console.log("Esto primero");
+    console.log(promesa);
     funcionAsyn();
+
+
 
 
 

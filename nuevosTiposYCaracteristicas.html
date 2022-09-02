@@ -13,7 +13,7 @@
 
   <script>
 
-    /*// Symbols (Nuevo tipo de dato primitivo)
+/*    // Symbols (Nuevo tipo de dato primitivo)
 
     // Cada simbolo es unico, por eso ahora la comparacion nos da false:
 
@@ -88,8 +88,8 @@
     console.log(iterable.next());
     console.log(iterable.next());
     console.log(iterable.next());
-*/
-    //Generators
+
+*/    //Generators
 
 /*  function* iteradorG(){
 
@@ -102,18 +102,20 @@
 
     const iterador = iteradorG();
 
+    console.log(iterador.next());
+    console.log(iterador.next());
+    console.log(iterador.next());
 
 
-    for(let elem of iterador){
-      console.log(elem);
-    }
+
+
 
     const nuevoarr = [...iteradorG()]; // Guardamos los yield del generator dentro de un arreglo
 
-    console.log(nuevoarr);
-    console.log(iterador);
 
-    // Proxies
+
+
+*/    // Proxies
 
     const persona = {
       nombre: "",
@@ -123,14 +125,11 @@
     }
 
     const handler = {
-
-      set(obj, prop, value){
-        obj[prop]= value;
-      }
     }
 
     const dem = new Proxy(persona,handler); //Se genera una copia del objeto target y la usamos de controlador
 
+    console.log(persona);
     console.log(dem);
 
     dem.nombre= "pelotita";
@@ -138,7 +137,7 @@
     console.log(dem);
     console.log(persona);
 
-*/
+
 
 
 
