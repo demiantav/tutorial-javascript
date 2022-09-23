@@ -1,0 +1,11 @@
+
+:root{
+
+    --dark-red: rgba(253, 7, 7, 0.596);
+    --font-title: 0.8em;
+}
+
+body{
+
+    background-color: hsl(194, 25%, 81%);
+}
