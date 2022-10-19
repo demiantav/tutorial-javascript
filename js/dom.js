@@ -45,6 +45,25 @@ let varFont = getComputedStyle(document.documentElement).getPropertyValue("--fon
 
 $bodyDOM.style.fontSize= varFont; // Y podemos asignarla a una propiedad que queramos
 
+// Manejo de clases:
+
+const $card = document.querySelector(".opciones");
+const $lista = document.querySelector(".lista");
+const $listaUl= document.querySelector(".lista-ul");
+
+console.log($card);
+console.log($card.classList);// Elemento con lista de clases
+console.log($card.classList.contains("opciones")); // averiguamos si contiene determinada clase
+$card.classList.add("cambiaColor");
+$card.classList.toggle("rotate");
 
 
+// Añadir elementos:
 
+const $tarjetaLi= document.createElement("li");
+const $textoLi= document.createTextNode("11");
+
+$tarjetaLi.classList.add("opciones");
+$tarjetaLi.appendChild($textoLi);
+
+$listaUl.appendChild($tarjetaLi);
