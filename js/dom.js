@@ -55,7 +55,7 @@ console.log($card);
 console.log($card.classList);// Elemento con lista de clases
 console.log($card.classList.contains("opciones")); // averiguamos si contiene determinada clase
 $card.classList.add("cambiaColor");
-$card.classList.toggle("rotate");
+$card.classList.toggle("rotate"); 
 
 
 // Añadir elementos:
@@ -63,7 +63,15 @@ $card.classList.toggle("rotate");
 const $tarjetaLi= document.createElement("li");
 const $textoLi= document.createTextNode("11");
 
+console.log($textoLi);
+console.log($tarjetaLi);
+
 $tarjetaLi.classList.add("opciones");
-$tarjetaLi.appendChild($textoLi);
+$tarjetaLi.appendChild($textoLi); // De esta manera agregamos el nodo de texto a la tarjeta que creamos
 
 $listaUl.appendChild($tarjetaLi);
+
+$listaUl.removeChild($listaUl.children[2]);
+
+
+
