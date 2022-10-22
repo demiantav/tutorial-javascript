@@ -58,7 +58,7 @@ $card.classList.add("cambiaColor");
 $card.classList.toggle("rotate"); 
 
 
-// Añadir elementos:
+// Interactuar con elementos:
 
 const $tarjetaLi= document.createElement("li");
 const $textoLi= document.createTextNode("11");
@@ -71,7 +71,77 @@ $tarjetaLi.appendChild($textoLi); // De esta manera agregamos el nodo de texto a
 
 $listaUl.appendChild($tarjetaLi);
 
-$listaUl.removeChild($listaUl.children[2]);
+//$listaUl.removeChild($listaUl.children[2]); // Eliminamos uno de los nodos de la lista
+
+
+// Manejadores de Eventos:
+
+// Evento para ejecutar mediante HTML:
+
+const changeColor = () => {
+
+    const $sextoElemento = document.querySelector(".lista-ul").children[6];
+
+    $sextoElemento.style.backgroundColor= "blue";
+
+    console.log(event);
+
+}
+
+// Evento multiple:
+
+//Mediante el uso del siguiente metodo podemos añadir multiples eventos a un elemento que acepte eventos
+
+const $eventoMultiple= document.querySelector("#evento-multiple"),
+$eliminarEventos= document.querySelector("#remover-eventos"),
+$parrafo= document.querySelector(".parrafo");
+
+$eventoMultiple.addEventListener("click", changeColor);
+
+
+// Para eliminar un evento podemos hacer lo siguiente:
+
+function removerEvento(){
+
+    alert('Eliminando...');
+
+    $eventoMultiple.removeEventListener("click", changeColor);
+}
+
+$eliminarEventos.addEventListener("click", removerEvento);
+
+// Delegacion de eventos:
+// Mecanismo para añadir eventos a distintos elementos pero aplicando un eventListener a un padre
+
+document.addEventListener("click", (e) => {
+    
+    console.log(e.target);
+    
+    if(e.target.matches("#boton-delegador")){
+
+        changeColor();
+    
+    }
+
+    if(e.target.matches(".parrafo")){
+
+        $parrafo.style.color= "darkred";
+
+
+    }
+
+
+})
+
+
+
+
+
+
+   
+
+
+
 
 
 
