@@ -113,22 +113,21 @@ $eliminarEventos.addEventListener("click", removerEvento);
 // Delegacion de eventos:
 // Mecanismo para añadir eventos a distintos elementos pero aplicando un eventListener a un padre
 
-document.addEventListener("click", (e) => {
+document.addEventListener("click", (event) => {
     
-    console.log(e.target);
+    console.log(event.target);
     
-    if(e.target.matches("#boton-delegador")){
+    if(event.target.matches("#boton-delegador")){
 
         changeColor();
-    
     }
 
-    if(e.target.matches(".parrafo")){
+    if(event.target.matches(".parrafo")){
 
         $parrafo.style.color= "darkred";
-
-
     }
+
+    
 
 
 })
