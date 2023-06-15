@@ -11,9 +11,9 @@
 
   <script>
 
-  /* let timeId= setInterval(() => alert("Cuidado"), 10000); // Guardamos una funcion que va a arrojar un alerta en forma de ventana cada 2 seg
+  // let timeId= setInterval(() => alert("Cuidado"), 10000); // Guardamos una funcion que va a arrojar un alerta en forma de ventana cada 2 seg
 
-  clearInterval(timeId); //Con esta funcion cancelamos el metodo anterior
+ // clearInterval(timeId); //Con esta funcion cancelamos el metodo anterior
 
 
 
@@ -21,29 +21,29 @@
 
 // Las funciones se van apilando en una pila (Stack) y se van ejecutando de una a la vez, siempre empezando por la ultima que se apilo (LIFO)
 
-    const ejecutarSincrono = () =>{
+    // const ejecutarSincrono = () =>{
 
-      console.log("Inicio");
+    //   console.log("Inicio");
 
-      function uno(){
+    //   function uno(){
 
-        console.log("Uno");
-        dos();
-        console.log("Tres")
-      }
+    //     console.log("Uno");
+    //     dos();
+    //     console.log("Tres")
+    //   }
 
-      function dos(){
+    //   function dos(){
 
-        console.log("Dos");
-      }
+    //     console.log("Dos");
+    //   }
 
-      uno();
-      console.log("Fin");
+    //   uno();
+    //   console.log("Fin");
 
 
-    }
+    // }
 
-    ejecutarSincrono();
+    // ejecutarSincrono();
 
 
 
@@ -51,96 +51,102 @@
 
     //El single thread no se bloqueara en ningun momento ya que las funciones asincronas permiten que el codigo continue ejecutandose
 
-    const ejecutarSincrono2 = () => {
+    // const ejecutarSincrono2 = () => {
 
-      console.log("Inicio dos");
+    //   console.log("Inicio dos");
 
-      function unoAsin(){
+    //   function unoAsin(){
 
-        setTimeout( () => {
+    //     setTimeout( () => {
 
-          console.log("1");
+    //       console.log("1");
 
-        }, 200);
+    //     }, 5000);
 
-        dosAsin();
-        console.log("3");
+    //     dosAsin();
+    //     console.log("3");
 
-      }
+    //   }
 
-      function dosAsin(){
+    //   function dosAsin(){
 
-        setTimeout( () =>{
+    //     setTimeout( () =>{
 
-          console.log("2");
-        }, 2000)
-      }
+    //       console.log("2");
+    //     }, 2000)
+    //   }
 
-      unoAsin();
-      console.log("Terminar");
+    //   unoAsin();
+    //   console.log("Terminar");
 
-    }
+    // }
 
-    ejecutarSincrono2();
-    console.log(navigator);
-
-
-    // Callbacks
-
-   const funcion = (callback) => {
-
-         setTimeout(()=>{
-
-           console.log("Hola");
-           callback();
-         }, 5000);
-
-         console.log("Aca estoy")
-
-    }
-
-    const sumar = () => {
-
-      console.log(5+3);
-    }
+    // ejecutarSincrono2();
+    
 
 
-    funcion(sumar);
+  //   // Callbacks
+
+  //  const funcion = (callback) => {
+
+  //        setTimeout(()=>{
+
+  //          console.log("Hola");
+  //          callback();
+  //        }, 5000);
+
+  //        console.log("Aca estoy")
+
+  //   }
+
+  //   const sumar = () => {
+
+  //     console.log(5+3);
+  //   }
 
 
-    // Promises
+  //   funcion(sumar);
+  //   console.log("prueba");
 
 
-// Guardamos el objeto promesa en una variable, la promesa recibe una arrow function con dos parametros, los cuales son los estados de la promesa
+//     // Promises
 
-  */  const promesa = new Promise((resolve,reject)=>{
+
+// // Guardamos el objeto promesa en una variable, la promesa recibe una arrow function con dos parametros, los cuales son los estados de la promesa
+
+    const promesa = new Promise((resolve,reject)=>{
 
       let flag = true;
+      
+        if(!flag) return Promise.reject(new Error(" Esto esta todo mal ")); // Si es falso el estado pasa a reject y tira error
 
-      if(!flag) return Promise.reject(new Error(" Esto esta todo mal ")); // Si es falso el estado pasa a reject y tira error
+      
 
       setTimeout( () =>{
+
+        console.log("hola");
 
         resolve({
         nombre: "demian"
       });
 
-      }, Math.random() * 5000);
+      }, 10000);
 
+      
 
     });
 
-  /* promesa
-    .then((result)=>{
-      console.log("Estas adentro de la promesa");
-      console.log(result);
+//     // promesa
+//     // .then((x)=>{
+//     //   console.log("Estas adentro de la promesa");
+//     //   console.log(x);
 
 
-    })
-    .catch(error => console.log(error));*/
+//     // })
+//     // .catch(error => console.log(error));
 
 
-    // Async - Await
+//     //Async - Await
 
     const funcionAsyn = async () => {
 
@@ -157,10 +163,19 @@
 
       }
     }
-
+  
     console.log("Esto primero");
     console.log(promesa);
     funcionAsyn();
+
+
+    n.mediaDevices.getUserMedia({video:true})
+        .then((stream) => {
+
+            $video.srcObject= stream;
+            $video.play();
+
+        })
 
 
 
