@@ -10,11 +10,11 @@ xhr.addEventListener("readystatechange", e => {
         console.log(JSON.parse(data));
     } else {
 
-        console.log("not ok");
+        console.log("not");
         console.log(xhr.responseText);
     }
 
-    console.log(xhr)
+    console.log(xhr);
 })
 
 xhr.open("GET","https://jsonplaceholder.typicode.com/users");
