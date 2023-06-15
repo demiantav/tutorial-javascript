@@ -2,7 +2,7 @@ const xhr = new XMLHttpRequest();
 
 xhr.addEventListener("readystatechange", e => {
    
-    if(xhr.readyState!==4) return; // Mediante esta validacion nos aseguramos que el codigo debajo solo se ejecute cuando el estado se complete (4)
+    if(xhr.readyState!==4) return; // Mediante esta validacion nos aseguramos que el codigo debajo solo se ejecute cuando el estado se complete (4) -------
     if(xhr.status >= 200 && xhr.status < 300){
 
         console.log("ok");
@@ -10,7 +10,7 @@ xhr.addEventListener("readystatechange", e => {
         console.log(JSON.parse(data));
     } else {
 
-        console.log("not");
+        console.log("no");
         console.log(xhr.responseText);
     }
 
