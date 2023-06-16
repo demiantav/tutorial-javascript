@@ -1,0 +1,47 @@
+
+:root{
+
+    --dark-red: rgba(253, 7, 7, 0.596);
+    --font-title: 0.8em;
+}
+
+body{
+
+    background-color: hsl(194, 25%, 81%);
+}
+
+.opciones{
+
+  background-color: red;
+  list-style: none;
+  margin: 1em;
+  width: 20%;
+  height: 15em;
+  margin-right: 4em;
+  padding: 0.5em;
+  display: inline-block;
+  display: grid;
+  place-items: center;
+  color: white;
+
+
+
+}
+
+ .lista ul {
+
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cambiaColor{
+
+  background-color: violet;
+}
+
+.rotate{
+
+  transform: rotate(5deg);
+}
