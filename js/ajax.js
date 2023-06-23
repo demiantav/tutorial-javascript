@@ -1,3 +1,4 @@
+
 const xhr = new XMLHttpRequest(),
       d= document,
       $lista= d.querySelector(".list-ul"),
@@ -20,6 +21,7 @@ xhr.addEventListener("readystatechange", e => {
             const $li = d.createElement("li");
             $li.textContent= `${e.name} - ${e.email}`;
             $fragment.appendChild($li);
+            
         })
 
         $lista.appendChild($fragment);
@@ -36,6 +38,12 @@ xhr.addEventListener("readystatechange", e => {
     
 })
 
-xhr.open("GET","https://jsonplaceholder.typicode.com/users");
-xhr.send();
+setTimeout( () => {
+
+    xhr.open("GET", "https://jsonplaceholder.typicode.com/users");
+    xhr.send();
+
+}, 5000);
+
+
 
