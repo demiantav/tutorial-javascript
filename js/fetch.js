@@ -33,3 +33,42 @@ export default function fetchPetition(){
     })
     .finally();
 }
+
+export function fetchAsync(){
+
+    const d = document,
+          $lista = d.querySelector(".list-async"),
+          $fragment = d.createDocumentFragment();
+
+    
+    async function getData(){
+
+        try {
+
+            let res = await fetch("https://jsonplaceholder.typicode.com/uers"),
+                json = await res.json();
+
+                if(!res.ok) throw new Error("Pago algo dentro del catch")
+
+                json.forEach(element => {
+            
+                    const $li = d.createElement("li");
+                    $li.textContent= `ID: ${element.id} - Name: ${element.name}`;
+                    $fragment.appendChild($li);
+                
+                })
+        
+                $lista.appendChild($fragment);
+
+            
+        } catch (error) {
+
+            console.log(error);
+            
+        } finally {}
+    }
+
+
+    getData();
+
+}
