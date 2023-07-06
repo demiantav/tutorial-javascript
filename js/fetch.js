@@ -17,9 +17,9 @@ export default function fetchPetition(){
     .then(json => {
 
         json.forEach(element => {
-
+            
             const $li = d.createElement("li");
-            $li.textContent(`${element.adress} - ${element.phone}`);
+            $li.textContent= `Username: ${element.username} - Website: ${element.website}`;
             $fragment.appendChild($li);
         
         })
