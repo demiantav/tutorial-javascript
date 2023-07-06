@@ -1,14 +1,16 @@
+export default function ajaxPetition(){
 
-const xhr = new XMLHttpRequest(),
+    const xhr = new XMLHttpRequest(),
       d= document,
       $lista= d.querySelector(".list-ul"),
       $fragment = d.createDocumentFragment();
 
-xhr.addEventListener("readystatechange", e => {
+   xhr.addEventListener("readystatechange", e => {
 
-    let data;
+      let data;
    
     if(xhr.readyState!==4) return; // Mediante esta validacion nos aseguramos que el codigo debajo solo se ejecute cuando el estado se complete (4)
+    
     if(xhr.status >= 200 && xhr.status < 300){
 
         console.log("ok");
@@ -44,6 +46,10 @@ setTimeout( () => {
     xhr.send();
 
 }, 5000);
+
+
+}
+
 
 
 
