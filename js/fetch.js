@@ -45,7 +45,7 @@ export function fetchAsync(){
 
         try {
 
-            let res = await fetch("https://jsonplaceholder.typicode.com/uers"),
+            let res = await fetch("https://jsonplaceholder.typicode.com/users"),
                 json = await res.json();
 
                 if(!res.ok) throw new Error("Pago algo dentro del catch")
