@@ -10,7 +10,7 @@ export default function axiosPetition(){
 
             const res = await axios.get("https://jsonplaceholder.typicode.com/users");
 
-            console.log(res)
+            console.log(res);
 
             res.data.forEach((element) => {
 
@@ -30,7 +30,7 @@ export default function axiosPetition(){
 
 
     }
-
-
+    
     getDataAxios();
+
 }
