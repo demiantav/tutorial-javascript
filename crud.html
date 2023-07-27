@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/crud.css">
+    <title>Crud Ajax: XML, Fetch, Axios</title>
+</head>
+<body>
+
+    <div class="container-crud">
+        <section class="section crud">
+            <div class="form-xml">
+
+                <h1>Crud XML</h1>
+
+                <form action="" class="product-form">
+
+                    <h1>Ingrese producto:</h1>
+                    
+                    <label for="name">Nombre:</label>
+                    <input type="text" name="name" id="name">
+                    <label for="price">Precio:</label>
+                    <input type="number" name="price" id="price">
+                    <label for="marca">Marca:</label>
+                    <input type="text" name="marca" id="marca">
+
+                    <div class="buttons">
+                        <button type="submit">Guardar</button>
+                        <button>Eliminar</button>
+                    </div>
+                    
+                </form>
+
+            </div>
+
+            <div class="table-xml"></div>
+        </section>
+        <section class="section table">
+
+            <div class="cont-table">
+
+                <h2>Mostrar productos:</h2>
+
+            <table class="table-crud">
+                <thead class="head">
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Marca</th>
+                        <th>Precio</th>
+                        <th>Acciones</th>
+                    </tr>
+                    
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>1</td>
+                        <td>Shampoo</td>
+                        <td>Pantene</td>
+                        <td>$500</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>Perfume</td>
+                        <td>Channel</td>
+                        <td>$53999</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            </div>
+
+            
+        </section>
+    </div>
+    
+</body>
+</html>

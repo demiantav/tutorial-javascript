@@ -1,0 +1,81 @@
+/* CRUD XML:*/
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.container-crud{
+
+    background-color: aqua;
+    
+}
+
+.section{
+    
+    
+    display: grid;
+    height:100vh;
+    place-items: center;
+    color: white;
+}
+
+.crud{ background-color: brown; }
+.table{ background-color: blue;}
+
+.form-xml{
+
+    
+    padding: 2rem;
+    
+}
+
+
+
+.product-form{
+
+    display: flex;
+    gap: .8rem;
+    flex-direction: column;
+    
+   
+}
+
+
+/*Tabla*/
+
+.cont-table{
+
+    gap: 3rem;
+    display: grid;
+}
+
+.head{
+
+    background-color: black;
+}
+
+th,td{
+
+    padding: 1rem;
+}
+
+.table-crud{
+
+    background-color: rgb(100, 100, 231);
+    table-layout: fixed;
+  border-collapse: collapse;
+}
+
+
+
+
+

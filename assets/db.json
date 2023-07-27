@@ -1,14 +1,67 @@
 {
-    "productos": [
-      {"id": 1, "name": "crema", "price": 500, "marca": "Dove", "categoryId": 1},
-      {"id": 2, "name": "esmalte", "price": 1000, "marca": "Pirulo", "categoryId": 2},
-      {"id": 3, "name": "algodon", "price": 200, "marca": "Peluchito", "categoryId": 2},
-      {"id": 4, "name": "perfume", "price": 52468, "marca": "Polo", "categoryId": 1},
-      {"id": 5, "name": "desmaquillaje", "price": 3000, "marca": "Garnier", "categoryId": 1}
-    ],
-
-    "categorias": [
-      { "id": "1", "name": "Belleza", "description": "Perfumes, cremas, lociones" },
-      { "id": "2", "name": "Accessorios", "description": "Secadores, maquillaje, prestobarba" }
-    ]
+  "productos": [
+    {
+      "id": 1,
+      "name": "crema",
+      "price": 500,
+      "marca": "Dove",
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "name": "esmalte",
+      "price": 1000,
+      "marca": "Pirulo",
+      "categoryId": 2
+    },
+    {
+      "id": 3,
+      "name": "algodon",
+      "price": 200,
+      "marca": "Peluchito",
+      "categoryId": 2
+    },
+    {
+      "id": 4,
+      "name": "perfume",
+      "price": 52468,
+      "marca": "Polo",
+      "categoryId": 1
+    },
+    {
+      "id": 5,
+      "name": "desmaquillaje",
+      "price": 3000,
+      "marca": "Garnier",
+      "categoryId": 1
+    },
+    {
+      "id": 6,
+      "name": "jabon",
+      "price": 3000,
+      "marca": "Ala",
+      "categoryId": 2
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8,
+      "name": "jabon",
+      "price": 850,
+      "marca": "Suavecito"
+    }
+  ],
+  "categorias": [
+    {
+      "id": "1",
+      "name": "Belleza",
+      "description": "Perfumes, cremas, lociones"
+    },
+    {
+      "id": "2",
+      "name": "Accessorios",
+      "description": "Secadores, maquillaje, prestobarba"
+    }
+  ]
 }
