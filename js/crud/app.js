@@ -1,12 +1,39 @@
-import { getProducts } from "./API.js";
+import { getProducts, setProduct } from "./API.js";
 
 const d = document;
+
+// Mostramos los productos en la tabla: GET
 
 d.addEventListener("DOMContentLoaded", e => {
    
     showProducts();
     
 })
+
+// Creamos un producto y lo añadimos a nuestra base: POST
+
+d.querySelector(".product-form").addEventListener("submit", e => {
+    
+    e.preventDefault();
+    createProduct();
+
+});
+
+d.addEventListener("click", e => {
+
+    if(e.target.matches(".editar")){
+
+        d.getElementById("name").value= e.target.dataset.name;
+        d.getElementById("price").value= e.target.dataset.price;
+        d.getElementById("marca").value= e.target.dataset.marca;
+
+        
+    }
+})
+
+
+
+//Funciones:
 
 const showProducts = async () => {
 
@@ -27,14 +54,13 @@ const showProducts = async () => {
           `<th>${id}</th>
            <td>${name}</td>
            <td>${marca}</td>
-           <td>${price}</td>
+           <td>$ ${price}</td>
+           <td>
+           <button type="button" class="btn editar" data-id= ${id} data-name= ${name} data-marca= ${marca} data-price= ${price}>Editar</button>
+           <button type="button" class="btn eliminar" data-id= ${id}>Eliminar</button>
+           </td>
            `
         fragment.appendChild(rows);
-        
-        
-        
-
-        
         
     });
 
@@ -42,3 +68,24 @@ const showProducts = async () => {
 
 
 }
+
+const createProduct = async () => {
+
+    const name = d.getElementById("name").value,
+          price = d.getElementById("price").value,
+          marca = d.getElementById("marca").value
+
+
+    const product = {
+        name,
+        price,
+        marca
+    }
+
+    await setProduct(product);
+}
+
+
+
+
+

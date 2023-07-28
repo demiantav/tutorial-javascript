@@ -1,6 +1,8 @@
+const uri = "http://localhost:3000/productos";
+
 export async function getProducts(){
 
-    const uri = "http://localhost:3000/productos";
+    
 
     try {
 
@@ -15,4 +17,27 @@ export async function getProducts(){
         
     }
     
+}
+
+export async function setProduct(product){
+
+    try {
+
+        await fetch(uri,{
+            method: `POST`,
+            body: JSON.stringify(product),
+            headers: {
+                "Content-Type": "application/json"
+            }
+
+
+        });
+
+        window.location.href = "crud.html";
+        
+    } catch (error) {
+
+        console.log(error);
+        
+    }
 }

@@ -23,7 +23,7 @@ body{
     
     
     display: grid;
-    height:100vh;
+    min-height:100vh;
     place-items: center;
     color: white;
 }
@@ -54,8 +54,10 @@ body{
 
 .cont-table{
 
-    gap: 3rem;
+   
     display: grid;
+    
+    
 }
 
 .head{
@@ -70,9 +72,31 @@ th,td{
 
 .table-crud{
 
-    background-color: rgb(100, 100, 231);
-    table-layout: fixed;
-  border-collapse: collapse;
+    background-color: rgb(74, 74, 165);
+    border-collapse: collapse;
+    word-break: break-all;
+  
+}
+
+.btn{
+
+    padding: .6rem;
+    cursor: pointer;
+    border-radius: .4rem;
+    border: none;
+    color: white;
+    letter-spacing: .2rem;
+}
+
+.editar {
+
+    background-color: hsl(34, 100%, 50%);
+    
+}
+
+.eliminar {
+
+    background-color: red;
 }
 
 

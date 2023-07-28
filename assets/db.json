@@ -50,6 +50,42 @@
       "name": "jabon",
       "price": 850,
       "marca": "Suavecito"
+    },
+    {
+      "id": 9,
+      "name": "Accesorio",
+      "price": 345,
+      "marca": "Diamante"
+    },
+    {
+      "id": 10,
+      "name": "Crema",
+      "price": 5000,
+      "marca": "Nivea"
+    },
+    {
+      "name": "Desodorante",
+      "price": "645",
+      "marca": "Old Spice",
+      "id": 11
+    },
+    {
+      "name": "Lavandina",
+      "price": "236",
+      "marca": "Ayudin",
+      "id": 12
+    },
+    {
+      "name": "",
+      "price": "",
+      "marca": "",
+      "id": 13
+    },
+    {
+      "name": "Delineador",
+      "price": "9000",
+      "marca": "Avon",
+      "id": 14
     }
   ],
   "categorias": [
