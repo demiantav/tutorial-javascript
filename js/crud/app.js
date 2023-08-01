@@ -19,6 +19,8 @@ d.querySelector(".product-form").addEventListener("submit", e => {
 
 });
 
+//Editamos un producto ya cargado en la base: PUT
+
 d.addEventListener("click", e => {
 
     if(e.target.matches(".editar")){
@@ -35,6 +37,8 @@ d.addEventListener("click", e => {
 
 //Funciones:
 
+
+//GET
 const showProducts = async () => {
 
     let fragment = d.createDocumentFragment(),
@@ -69,6 +73,7 @@ const showProducts = async () => {
 
 }
 
+//POST
 const createProduct = async () => {
 
     const name = d.getElementById("name").value,
@@ -83,6 +88,11 @@ const createProduct = async () => {
     }
 
     await setProduct(product);
+}
+
+const editProduct = () => {
+
+    
 }
 
 
