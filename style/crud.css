@@ -60,6 +60,11 @@ body{
     
 }
 
+.cont-table h2{
+
+    padding: 3rem;
+}
+
 .head{
 
     background-color: black;
@@ -97,6 +102,29 @@ th,td{
 .eliminar {
 
     background-color: red;
+}
+
+
+
+/***Modal edit*/
+
+.modal-edit{
+
+    width: 100%;
+    min-height: 100%;
+    background-color: rgba(163, 158, 158, 0.562);
+    position: fixed;
+    display: none;
+    place-items: center;
+    
+    
+}
+
+.box-modal{
+
+    width: 60%;
+    padding: 2rem;
+    background-color: bisque;
 }
 
 

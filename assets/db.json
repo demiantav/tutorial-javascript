@@ -1,11 +1,10 @@
 {
   "productos": [
     {
-      "id": 1,
-      "name": "crema",
-      "price": 500,
+      "name": "Crema",
+      "price": "500",
       "marca": "Dove",
-      "categoryId": 1
+      "id": 1
     },
     {
       "id": 2,
@@ -43,6 +42,9 @@
       "categoryId": 2
     },
     {
+      "name": "Mascara facial",
+      "price": "235",
+      "marca": "Mascarita",
       "id": 7
     },
     {
@@ -66,7 +68,7 @@
     {
       "name": "Desodorante",
       "price": "645",
-      "marca": "Old Spice",
+      "marca": "Old",
       "id": 11
     },
     {
@@ -76,9 +78,9 @@
       "id": 12
     },
     {
-      "name": "",
-      "price": "",
-      "marca": "",
+      "name": "Gel exfoliante",
+      "price": "9000",
+      "marca": "garnier",
       "id": 13
     },
     {
@@ -86,6 +88,42 @@
       "price": "9000",
       "marca": "Avon",
       "id": 14
+    },
+    {
+      "name": "Talco",
+      "price": "399",
+      "marca": "Rexona",
+      "id": 15
+    },
+    {
+      "name": "Corta barba",
+      "price": "1345",
+      "marca": "Gillette",
+      "id": 16
+    },
+    {
+      "name": "Shampoo",
+      "price": "980",
+      "marca": "Loreal",
+      "id": 17
+    },
+    {
+      "name": "Crema dental",
+      "price": "580",
+      "marca": "Colgate",
+      "id": 18
+    },
+    {
+      "name": "Pañales",
+      "price": "3800",
+      "marca": "Huggies",
+      "id": 19
+    },
+    {
+      "name": "Esmalte",
+      "price": "3000",
+      "marca": "Gucci",
+      "id": 20
     }
   ],
   "categorias": [

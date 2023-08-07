@@ -1,4 +1,4 @@
-import { getProducts, setProduct } from "./API.js";
+import { getProducts, setProduct, updateProduct } from "./API.js";
 
 const d = document;
 
@@ -14,24 +14,56 @@ d.addEventListener("DOMContentLoaded", e => {
 
 d.querySelector(".product-form").addEventListener("submit", e => {
     
-    e.preventDefault();
-    createProduct();
+    const id = d.querySelector(".hidden");
+
+     
+     e.preventDefault();
+
+     if(id.value === ""){
+
+        createProduct();
+
+
+     } else {
+
+        editProduct();
+     }
+     
 
 });
 
-//Editamos un producto ya cargado en la base: PUT
-
 d.addEventListener("click", e => {
+
+    let name = d.getElementById("name"),
+              price = d.getElementById("price"),
+              marca= d.getElementById("marca"),
+              hidden= d.querySelector(".hidden");
 
     if(e.target.matches(".editar")){
 
-        d.getElementById("name").value= e.target.dataset.name;
-        d.getElementById("price").value= e.target.dataset.price;
-        d.getElementById("marca").value= e.target.dataset.marca;
+        
+
+              name.value= e.target.dataset.name;
+              price.value= e.target.dataset.price;
+              marca.value= e.target.dataset.marca;
+              hidden.value= e.target.dataset.id;
+
+    }
+
+    if(e.target.matches(".eliminar")){
 
         
+
+              name.value= e.target.dataset.name;
+              price.value= e.target.dataset.price;
+              marca.value= e.target.dataset.marca;
+              hidden.value= e.target.dataset.id;
+
     }
+
+
 })
+
 
 
 
@@ -90,10 +122,30 @@ const createProduct = async () => {
     await setProduct(product);
 }
 
+//PUT
 const editProduct = () => {
 
+    let product;
+
+        const name = d.getElementById("name"),
+              price = d.getElementById("price"),
+              marca= d.getElementById("marca"),
+              hidden= d.querySelector(".hidden");
+
+              product = {
+                name: name.value,
+                price: price.value,
+                marca: marca.value
+              }
     
+
+    updateProduct(product,hidden);
+
 }
+
+//DELETE
+
+
 
 
 

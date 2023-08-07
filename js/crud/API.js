@@ -1,8 +1,8 @@
 const uri = "http://localhost:3000/productos";
 
-export async function getProducts(){
 
-    
+//GET
+export async function getProducts(){
 
     try {
 
@@ -19,6 +19,7 @@ export async function getProducts(){
     
 }
 
+//POST
 export async function setProduct(product){
 
     try {
@@ -40,4 +41,57 @@ export async function setProduct(product){
         console.log(error);
         
     }
+}
+
+//PUT
+export async function updateProduct(product,id){
+
+    console.log(id.value);
+    
+    // console.log(product)
+
+    try {
+
+        await fetch(`http://localhost:3000/productos/${id.value}`,{
+            method: `PUT`,
+            body: JSON.stringify(product),
+            headers: {
+                "Content-Type": "application/json"
+            }
+
+
+        });
+
+       
+        
+    } catch (error) {
+
+        console.log(error);
+        
+    }
+}
+
+
+export async function deleteProduct(id){
+
+    try {
+
+        await fetch(`http://localhost:3000/productos/${id.value}`,{
+            method: `DELETE`,
+            headers: {
+                "Content-Type": "application/json"
+            }
+
+
+        });
+
+       
+        
+    } catch (error) {
+
+        console.log(error);
+        
+    }
+
+
 }
