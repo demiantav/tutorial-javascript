@@ -1,12 +1,6 @@
 {
   "productos": [
     {
-      "name": "Crema",
-      "price": "500",
-      "marca": "Dove",
-      "id": 1
-    },
-    {
       "id": 2,
       "name": "esmalte",
       "price": 1000,
@@ -124,6 +118,12 @@
       "price": "3000",
       "marca": "Gucci",
       "id": 20
+    },
+    {
+      "name": "Bronceador",
+      "price": "1300",
+      "marca": "Nivea",
+      "id": 21
     }
   ],
   "categorias": [

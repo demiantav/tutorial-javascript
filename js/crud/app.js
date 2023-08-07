@@ -1,4 +1,4 @@
-import { getProducts, setProduct, updateProduct } from "./API.js";
+import { deleteProduct, getProducts, setProduct, updateProduct } from "./API.js";
 
 const d = document;
 
@@ -52,12 +52,9 @@ d.addEventListener("click", e => {
 
     if(e.target.matches(".eliminar")){
 
-        
-
-              name.value= e.target.dataset.name;
-              price.value= e.target.dataset.price;
-              marca.value= e.target.dataset.marca;
               hidden.value= e.target.dataset.id;
+
+              deleteProduct(hidden);
 
     }
 
@@ -93,7 +90,7 @@ const showProducts = async () => {
            <td>$ ${price}</td>
            <td>
            <button type="button" class="btn editar" data-id= ${id} data-name= ${name} data-marca= ${marca} data-price= ${price}>Editar</button>
-           <button type="button" class="btn eliminar" data-id= ${id}>Eliminar</button>
+           <button type="button" class="btn eliminar" data-id= ${id} data-name= ${name} data-marca= ${marca} data-price= ${price}>Eliminar</button>
            </td>
            `
         fragment.appendChild(rows);
